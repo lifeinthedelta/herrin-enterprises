@@ -250,6 +250,9 @@
 
     .brand-card {
       min-height: 430px;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -282,9 +285,12 @@
       background: linear-gradient(to top, rgba(0,0,0,.92), transparent 68%);
     }
 
-    .brand-card:hover {
+    .brand-card:hover,
+    .brand-card:focus-visible {
       transform: translateY(-5px);
-      border-color: rgba(201,155,67,.55);
+      border-color: rgba(201,155,67,.75);
+      box-shadow: 0 18px 45px rgba(0,0,0,.38);
+      outline: none;
     }
 
     .brand-card > * { position: relative; z-index: 1; }
@@ -508,37 +514,41 @@
         <h2 class="reveal">Brands built with purpose.</h2>
 
         <div class="brand-grid reveal">
-          <article class="brand-card">
+          <a class="brand-card"
+             href="https://lifeinthedelta.github.io/delta-house-productions/"
+             aria-label="Visit the Delta House Productions website">
             <span class="brand-label">Production company</span>
             <h3>Delta House Productions</h3>
             <p>
               Films, documentaries, reality and web shows, commercials, photography,
               and original creative media.
             </p>
-            <a class="btn btn-secondary" href="https://lifeinthedelta.github.io/delta-house-productions/">Visit Brand</a>
-          </article>
+            <span class="btn btn-secondary">Visit Brand</span>
+          </a>
 
-          <article class="brand-card">
+          <a class="brand-card"
+             href="https://lifeinthedelta.github.io/living-in-the-delta/"
+             aria-label="Visit the Living in the Delta website">
             <span class="brand-label">Original series</span>
             <h3>Living in the Delta</h3>
             <p>
               A documentary-style web series exploring the people, culture, businesses,
               and everyday life of the Mississippi Delta.
             </p>
-            <!-- Replace the link below if the Living in the Delta website URL changes. -->
-            <a class="btn btn-secondary" href="https://lifeinthedelta.github.io/living-in-the-delta/">Visit Series</a>
-          </article>
+            <span class="btn btn-secondary">Visit Series</span>
+          </a>
 
-          <article class="brand-card">
+          <a class="brand-card"
+             href="https://herrinphotography57.mypixieset.com/"
+             aria-label="Visit the Herrin Photography website">
             <span class="brand-label">Photography brand</span>
             <h3>Herrin Photography</h3>
             <p>
               Affordable portraits, families, maternity sessions, events, and meaningful
               photography centered on preserving memories.
             </p>
-            <!-- Replace # with the official Herrin Photography website link. -->
-            <a class="btn btn-secondary" href="#">Visit Brand</a>
-          </article>
+            <span class="btn btn-secondary">Visit Brand</span>
+          </a>
         </div>
       </div>
     </section>
