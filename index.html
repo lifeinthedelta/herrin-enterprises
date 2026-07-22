@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Herrin Enterprises builds brands, creates impact, and develops meaningful media and creative ventures across the Mississippi Delta." />
+  <meta name="theme-color" content="#080808" />
+  <title>Herrin Enterprises</title>
+
+  <style>
+    :root {
+      --black: #070707;
+      --charcoal: #101010;
+      --panel: #151515;
+      --cream: #f2eadf;
+      --muted: #b7afa3;
+      --gold: #c99b43;
+      --gold-light: #e1bd74;
+      --line: rgba(255,255,255,.11);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--black); }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(201,155,67,.10), transparent 28rem),
+        var(--black);
+      color: var(--cream);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: .032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+    }
+
+    .container {
+      width: min(calc(100% - 2.5rem), var(--max));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 .8rem;
+      color: var(--gold-light);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: -.02em;
+      line-height: 1.05;
+    }
+
+    h2 {
+      max-width: 780px;
+      margin-bottom: 1rem;
+      font-size: clamp(2.4rem, 5vw, 5rem);
+    }
+
+    p { color: var(--muted); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .85rem 1.2rem;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      color: #090909;
+      background: var(--gold);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,.24);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      color: #090909;
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      border-bottom: 1px solid transparent;
+      background: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.25));
+      backdrop-filter: blur(14px);
+      transition: .25s ease;
+    }
+
+    header.scrolled {
+      background: rgba(7,7,7,.9);
+      border-color: var(--line);
+    }
+
+    nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand-logo {
+      width: min(330px, 48vw);
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.45rem;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .menu-btn {
+      display: none;
+      padding: 0;
+      border: 0;
+      color: var(--cream);
+      background: transparent;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background:
+        linear-gradient(to top, #070707 3%, rgba(7,7,7,.2) 58%, rgba(7,7,7,.78)),
+        radial-gradient(circle at 75% 45%, rgba(201,155,67,.17), transparent 30rem),
+        linear-gradient(130deg, #090909, #24201a 48%, #080808);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        repeating-linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,.018) 12% 12.15%),
+        linear-gradient(90deg, transparent 50%, rgba(201,155,67,.055) 50.2%, transparent 50.4%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -16vw;
+      top: 10vh;
+      z-index: -1;
+      width: 52vw;
+      height: 52vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(222,181,95,.18), transparent 67%);
+      filter: blur(18px);
+    }
+
+    .hero-content { padding: 10rem 0 5.8rem; }
+
+    .hero h1 {
+      max-width: 980px;
+      margin-bottom: 1.3rem;
+      font-size: clamp(3.5rem, 8.6vw, 8rem);
+      font-weight: 500;
+    }
+
+    .hero h1 span {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(242,234,223,.5);
+    }
+
+    .hero-copy {
+      max-width: 730px;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+
+    section { padding: 7rem 0; }
+
+    .intro-grid,
+    .about-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.25fr;
+      gap: clamp(2rem, 7vw, 7rem);
+      align-items: start;
+    }
+
+    .big-copy {
+      margin: 0;
+      color: var(--cream);
+      font-family: Georgia, serif;
+      font-size: clamp(1.55rem, 3vw, 2.55rem);
+      line-height: 1.3;
+    }
+
+    .brands {
+      background: linear-gradient(180deg, #0c0c0c, #121212);
+      border-block: 1px solid var(--line);
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .brand-card {
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 70% 20%, rgba(201,155,67,.22), transparent 35%),
+        linear-gradient(145deg, #202020, #0c0c0c);
+      transition: .3s ease;
+    }
+
+    .brand-card:nth-child(2) {
+      background:
+        radial-gradient(circle at 30% 30%, rgba(93,112,83,.26), transparent 34%),
+        linear-gradient(145deg, #171b17, #080908);
+    }
+
+    .brand-card:nth-child(3) {
+      background:
+        radial-gradient(circle at 75% 70%, rgba(103,82,61,.28), transparent 35%),
+        linear-gradient(145deg, #1c1713, #090807);
+    }
+
+    .brand-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.92), transparent 68%);
+    }
+
+    .brand-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,155,67,.55);
+    }
+
+    .brand-card > * { position: relative; z-index: 1; }
+
+    .brand-card h3 {
+      margin: .4rem 0 .7rem;
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+    }
+
+    .brand-label {
+      color: var(--gold-light);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .brand-card .btn {
+      width: fit-content;
+      margin-top: .8rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .value-card {
+      min-height: 240px;
+      padding: 2rem;
+      background: var(--charcoal);
+    }
+
+    .value-number {
+      color: var(--gold);
+      font-size: .74rem;
+      letter-spacing: .15em;
+    }
+
+    .value-card h3 {
+      margin: 3.2rem 0 .7rem;
+      font-size: 1.7rem;
+    }
+
+    .about {
+      position: relative;
+      overflow: hidden;
+      background: #e9e0d2;
+      color: #111;
+    }
+
+    .about h2 { color: #111; }
+    .about p { color: #4a433a; }
+
+    .about::after {
+      content: "HE";
+      position: absolute;
+      right: -1rem;
+      bottom: -6rem;
+      color: rgba(0,0,0,.045);
+      font-family: Georgia, serif;
+      font-size: min(32vw, 27rem);
+      line-height: 1;
+    }
+
+    .about-grid { position: relative; z-index: 1; }
+
+    .quote {
+      margin-top: 2rem;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--gold);
+      color: #241f1a;
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+    }
+
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(201,155,67,.11), transparent 34rem),
+        #090909;
+    }
+
+    .contact h2 { margin-inline: auto; }
+    .contact p {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 1.08rem;
+    }
+
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--line);
+      background: #060606;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: #8d867c;
+      font-size: .78rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .menu-btn { display: block; }
+
+      .nav-links {
+        position: absolute;
+        top: 86px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 1.25rem 1.4rem;
+        background: rgba(7,7,7,.98);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .intro-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 5rem 0; }
+      .brand-logo { width: 235px; }
+      .hero h1 { font-size: 3.2rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .footer-row { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header id="siteHeader">
+    <nav class="container">
+      <a href="#top" aria-label="Herrin Enterprises home">
+        <img class="brand-logo" src="assets/herrin-enterprises-logo.png" alt="Herrin Enterprises logo" />
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#brands">Our Brands</a>
+        <a href="#values">Values</a>
+        <a class="btn btn-primary" href="#contact">Work With Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-content">
+        <p class="eyebrow">A Mississippi Delta company</p>
+        <h1>Building brands.<br />Creating impact.<br /><span>Leaving a legacy.</span></h1>
+        <p class="hero-copy">
+          Herrin Enterprises is the company behind creative brands, original productions,
+          photography, and community-focused media built to make a lasting impact.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#brands">Explore Our Brands</a>
+          <a class="btn btn-secondary" href="#about">About the Company</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container intro-grid reveal">
+        <div>
+          <p class="eyebrow">The company behind it all</p>
+          <h2>One vision. Multiple brands. Lasting impact.</h2>
+        </div>
+
+        <div>
+          <p class="big-copy">
+            We create meaningful brands and media ventures that tell stories, serve communities,
+            and build something worth remembering.
+          </p>
+          <p>
+            Herrin Enterprises brings together production, photography, original media,
+            storytelling, and business development under one growing company.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands" id="brands">
+      <div class="container">
+        <p class="eyebrow reveal">Our portfolio</p>
+        <h2 class="reveal">Brands built with purpose.</h2>
+
+        <div class="brand-grid reveal">
+          <article class="brand-card">
+            <span class="brand-label">Production company</span>
+            <h3>Delta House Productions</h3>
+            <p>
+              Films, documentaries, reality and web shows, commercials, photography,
+              and original creative media.
+            </p>
+            <a class="btn btn-secondary" href="https://lifeinthedelta.github.io/delta-house-productions/">Visit Brand</a>
+          </article>
+
+          <article class="brand-card">
+            <span class="brand-label">Original series</span>
+            <h3>Living in the Delta</h3>
+            <p>
+              A documentary-style web series exploring the people, culture, businesses,
+              and everyday life of the Mississippi Delta.
+            </p>
+            <!-- Replace the link below if the Living in the Delta website URL changes. -->
+            <a class="btn btn-secondary" href="https://lifeinthedelta.github.io/living-in-the-delta/">Visit Series</a>
+          </article>
+
+          <article class="brand-card">
+            <span class="brand-label">Photography brand</span>
+            <h3>Herrin Photography</h3>
+            <p>
+              Affordable portraits, families, maternity sessions, events, and meaningful
+              photography centered on preserving memories.
+            </p>
+            <!-- Replace # with the official Herrin Photography website link. -->
+            <a class="btn btn-secondary" href="#">Visit Brand</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="values">
+      <div class="container">
+        <p class="eyebrow reveal">What guides us</p>
+        <h2 class="reveal">Built on strong values.</h2>
+
+        <div class="values-grid reveal">
+          <article class="value-card">
+            <span class="value-number">01</span>
+            <h3>Creativity</h3>
+            <p>We approach every project with original ideas, thoughtful direction, and bold vision.</p>
+          </article>
+
+          <article class="value-card">
+            <span class="value-number">02</span>
+            <h3>Community</h3>
+            <p>We are committed to highlighting and serving the communities that make the Delta special.</p>
+          </article>
+
+          <article class="value-card">
+            <span class="value-number">03</span>
+            <h3>Integrity</h3>
+            <p>We build trust by being honest, dependable, and intentional in everything we create.</p>
+          </article>
+
+          <article class="value-card">
+            <span class="value-number">04</span>
+            <h3>Legacy</h3>
+            <p>We aim to build brands, stories, and experiences that remain meaningful for years to come.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid reveal">
+        <div>
+          <p class="eyebrow">About Herrin Enterprises</p>
+          <h2>Growing ideas into real brands.</h2>
+        </div>
+
+        <div>
+          <p>
+            Herrin Enterprises serves as the parent company behind Delta House Productions,
+            Living in the Delta, Herrin Photography, and future creative ventures.
+          </p>
+          <p>
+            Our mission is to develop strong brands, produce meaningful content, and create
+            opportunities that connect people through storytelling, creativity, and service.
+          </p>
+          <div class="quote">
+            “Building brands. Creating impact. Leaving a legacy.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container reveal">
+        <p class="eyebrow">Let’s build something meaningful</p>
+        <h2>Interested in working with Herrin Enterprises?</h2>
+        <p>
+          Reach out about partnerships, creative projects, media opportunities,
+          brand collaborations, or general business inquiries.
+        </p>
+        <!-- Replace this placeholder email with the official company email. -->
+        <a class="btn btn-primary" href="mailto:hello@herrinenterprises.com">Contact Herrin Enterprises</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Herrin Enterprises. All rights reserved.</span>
+      <span>Mississippi Delta · Media · Photography · Production</span>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
