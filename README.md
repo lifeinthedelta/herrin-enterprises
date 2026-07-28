@@ -1,27 +1,17 @@
-# Herrin Enterprises Website
+# Herrin Enterprises Version 3
 
-This package contains a complete one-page GitHub Pages website for Herrin Enterprises.
+This package contains:
+
+- `index.html`
+- `styles.css`
+- `script.js`
 
 ## Upload to GitHub Pages
 
-1. Create a new public GitHub repository named `herrin-enterprises`.
-2. Upload `index.html` and the entire `assets` folder.
-3. Commit the changes.
-4. Open Settings > Pages.
-5. Choose `Deploy from a branch`.
-6. Select `main` and `/ (root)`.
-7. Click Save.
+1. Open the `herrin-enterprises` repository.
+2. Replace the current `index.html` with this version.
+3. Upload `styles.css` and `script.js` into the same main folder.
+4. Commit the changes.
+5. Refresh the live website after GitHub Pages finishes publishing.
 
-The site URL should be:
-
-https://lifeinthedelta.github.io/herrin-enterprises/
-
-## Before publishing
-
-Edit `index.html` and replace:
-
-- `hello@herrinenterprises.com` with the official company email.
-- The `#` link for Herrin Photography with its real website link.
-- Any wording or brand information you want changed.
-
-Keep the `assets` folder beside `index.html`, or the logo will not appear.
+Fizz N' Fluff is now included as the fourth active Herrin Enterprises brand.

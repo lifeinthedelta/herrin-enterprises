@@ -3,227 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Herrin Enterprises is the parent company behind Delta House Productions, Living in the Delta, and Herrin Photography.">
+  <meta name="description" content="Herrin Enterprises is the Mississippi Delta parent company behind Herrin Photography, Delta House Productions, Living in the Delta, and Fizz N' Fluff.">
   <meta name="theme-color" content="#070707">
-  <title>Herrin Enterprises</title>
-
-  <style>
-    :root{
-      --black:#070707;
-      --panel:#111;
-      --panel2:#171717;
-      --cream:#f4eee4;
-      --muted:#b9b0a4;
-      --gold:#c89a43;
-      --gold-light:#e8c77f;
-      --green:#73c98b;
-      --line:rgba(255,255,255,.11);
-      --max:1180px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--black)}
-    body{
-      margin:0;
-      color:var(--cream);
-      background:
-        radial-gradient(circle at 80% 12%,rgba(200,154,67,.12),transparent 30rem),
-        var(--black);
-      font-family:Arial,Helvetica,sans-serif;
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-
-    a{color:inherit;text-decoration:none}
-    .container{width:min(calc(100% - 2.4rem),var(--max));margin:auto}
-    .eyebrow{
-      margin:0 0 .8rem;
-      color:var(--gold-light);
-      font-size:.72rem;
-      font-weight:850;
-      letter-spacing:.24em;
-      text-transform:uppercase;
-    }
-
-    h1,h2,h3{
-      margin-top:0;
-      font-family:Georgia,"Times New Roman",serif;
-      line-height:1.04;
-      letter-spacing:-.025em;
-    }
-
-    h2{font-size:clamp(2.5rem,5.5vw,5.4rem)}
-    p{color:var(--muted)}
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:49px;
-      padding:.86rem 1.25rem;
-      border:1px solid var(--gold);
-      border-radius:999px;
-      font-size:.76rem;
-      font-weight:850;
-      letter-spacing:.09em;
-      text-transform:uppercase;
-      transition:.25s ease;
-    }
-
-    .btn-primary{color:#090909;background:var(--gold)}
-    .btn-secondary{border-color:rgba(255,255,255,.24);background:rgba(255,255,255,.025)}
-    .btn:hover,.btn:focus-visible{
-      transform:translateY(-2px);
-      color:#090909;
-      background:var(--gold-light);
-      border-color:var(--gold-light);
-      outline:none;
-    }
-
-    header{
-      position:fixed;
-      inset:0 0 auto;
-      z-index:100;
-      background:rgba(7,7,7,.92);
-      border-bottom:1px solid var(--line);
-      backdrop-filter:blur(15px);
-    }
-
-    nav{
-      min-height:84px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:1.5rem;
-    }
-
-    .wordmark{display:inline-flex;align-items:center;gap:.8rem}
-    .wordmark-mark{
-      width:42px;height:42px;display:grid;place-items:center;
-      border:1px solid var(--gold);color:var(--gold-light);
-      font-family:Georgia,serif;font-size:1.6rem;
-    }
-
-    .wordmark-text{display:grid;line-height:1}
-    .wordmark-text strong{font-family:Georgia,serif;font-size:1.1rem;letter-spacing:.12em}
-    .wordmark-text span{margin-top:.35rem;color:var(--gold);font-size:.56rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase}
-
-    .nav-links{display:flex;align-items:center;gap:1.35rem;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
-    .nav-links>a:not(.btn):hover{color:var(--gold-light)}
-    .menu-btn{display:none;border:0;background:transparent;color:var(--cream);font-size:1.6rem;cursor:pointer}
-
-    .hero{
-      min-height:100svh;
-      display:grid;
-      align-items:end;
-      background:
-        linear-gradient(to top,#070707 2%,rgba(7,7,7,.22) 58%,rgba(7,7,7,.82)),
-        radial-gradient(circle at 75% 38%,rgba(200,154,67,.23),transparent 28rem),
-        linear-gradient(135deg,#080808,#211c15 48%,#080808);
-    }
-
-    .hero-content{padding:10rem 0 5.5rem}
-    .version-badge{
-      display:inline-flex;
-      margin-bottom:1.1rem;
-      padding:.38rem .7rem;
-      border:1px solid rgba(200,154,67,.45);
-      border-radius:999px;
-      color:var(--gold-light);
-      background:rgba(200,154,67,.07);
-      font-size:.64rem;
-      font-weight:850;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
-
-    .hero h1{max-width:1030px;margin-bottom:1.25rem;font-size:clamp(3.5rem,8.5vw,8.2rem);font-weight:500}
-    .hero h1 span{color:transparent;-webkit-text-stroke:1px rgba(244,238,228,.5)}
-    .hero-copy{max-width:760px;margin:0;font-size:clamp(1rem,2vw,1.22rem)}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
-
-    section{padding:7rem 0}
-    .intro-grid,.about-grid{display:grid;grid-template-columns:.9fr 1.2fr;gap:clamp(2.3rem,7vw,7rem)}
-    .big-copy{margin:0;color:var(--cream);font-family:Georgia,serif;font-size:clamp(1.55rem,3vw,2.55rem);line-height:1.28}
-
-    .stats{padding-top:0}
-    .stats-grid,.values-grid{display:grid;gap:1px;border:1px solid var(--line);background:var(--line)}
-    .stats-grid{grid-template-columns:repeat(3,1fr)}
-    .stat{min-height:190px;padding:2rem;background:#0d0d0d}
-    .stat strong{display:block;color:var(--gold-light);font-family:Georgia,serif;font-size:clamp(2.8rem,5vw,5rem);line-height:1}
-    .stat span{display:block;margin-top:.7rem;font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-
-    .brands{border-block:1px solid var(--line);background:linear-gradient(180deg,#0b0b0b,#121212)}
-    .section-head{display:flex;justify-content:space-between;gap:2rem;align-items:end}
-    .section-head p:last-child{max-width:470px}
-    .brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
-
-    .brand-card{
-      min-height:520px;
-      display:flex;
-      flex-direction:column;
-      padding:1.35rem;
-      border:1px solid var(--line);
-      background:radial-gradient(circle at 75% 14%,rgba(200,154,67,.21),transparent 32%),linear-gradient(145deg,#1c1c1c,#0a0a0a);
-      transition:.3s ease;
-    }
-
-    .brand-card:nth-child(2){background:radial-gradient(circle at 28% 19%,rgba(100,124,87,.28),transparent 34%),linear-gradient(145deg,#182018,#090b09)}
-    .brand-card:nth-child(3){background:radial-gradient(circle at 78% 70%,rgba(121,91,62,.27),transparent 36%),linear-gradient(145deg,#1d1814,#090807)}
-    .brand-card:hover,.brand-card:focus-visible{transform:translateY(-8px);border-color:rgba(200,154,67,.78);outline:none}
-
-    .brand-top{display:flex;justify-content:space-between;align-items:start}
-    .brand-icon{width:62px;height:62px;display:grid;place-items:center;border:1px solid rgba(200,154,67,.75);color:var(--gold-light);font-family:Georgia,serif;font-size:1.7rem}
-    .status{padding:.38rem .62rem;border:1px solid rgba(115,201,139,.32);border-radius:999px;color:#a8e8ba;background:rgba(115,201,139,.075);font-size:.61rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
-    .brand-content{margin-top:auto}
-    .brand-category{color:var(--gold-light);font-size:.68rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
-    .brand-card h3{margin:.45rem 0 .75rem;font-size:clamp(2rem,3vw,3rem)}
-    .brand-meta{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.15rem 0 1.25rem}
-    .brand-meta span{padding:.35rem .55rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#d3cbc0;font-size:.63rem;font-weight:700}
-
-    .values-grid{grid-template-columns:repeat(4,1fr)}
-    .value-card{min-height:240px;padding:2rem;background:#0d0d0d}
-    .value-number{color:var(--gold);font-size:.7rem;letter-spacing:.16em}
-    .value-card h3{margin:3rem 0 .7rem;font-size:1.7rem}
-
-    .about{color:#111;background:#e9e0d2}
-    .about h2{color:#111}
-    .about p{color:#4a433a}
-    .quote{margin-top:2rem;padding-left:1.2rem;border-left:2px solid var(--gold);color:#241f1a;font-family:Georgia,serif;font-size:1.35rem}
-
-    .contact{text-align:center;background:radial-gradient(circle at center,rgba(200,154,67,.12),transparent 34rem),#090909}
-    .contact p{max-width:660px;margin:0 auto 2rem}
-
-    footer{padding:2.4rem 0;border-top:1px solid var(--line);background:#050505}
-    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:end}
-    .footer-links{display:flex;justify-content:end;flex-wrap:wrap;gap:.9rem 1.3rem;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-    .copyright{margin-top:.8rem;color:#8d867c;font-size:.76rem}
-
-    @media(max-width:930px){
-      .menu-btn{display:block}
-      .nav-links{position:absolute;top:84px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;padding:1rem 1.2rem 1.35rem;background:#070707;border-bottom:1px solid var(--line)}
-      .nav-links.open{display:flex}
-      .intro-grid,.about-grid,.footer-grid{grid-template-columns:1fr}
-      .section-head{align-items:start;flex-direction:column}
-      .brand-grid{grid-template-columns:1fr}
-      .values-grid{grid-template-columns:repeat(2,1fr)}
-      .footer-links{justify-content:start}
-    }
-
-    @media(max-width:620px){
-      section{padding:5rem 0}
-      .hero h1{font-size:3.15rem}
-      .stats-grid,.values-grid{grid-template-columns:1fr}
-    }
-  </style>
+  <meta property="og:title" content="Herrin Enterprises">
+  <meta property="og:description" content="One company. Four brands. Built to create, serve, and inspire.">
+  <title>Herrin Enterprises | Our Family of Brands</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header>
-    <nav class="container">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header id="siteHeader">
+    <nav class="container" aria-label="Main navigation">
       <a class="wordmark" href="#top" aria-label="Herrin Enterprises home">
         <span class="wordmark-mark">H</span>
-        <span class="wordmark-text"><strong>HERRIN</strong><span>Enterprises</span></span>
+        <span class="wordmark-text">
+          <strong>HERRIN</strong>
+          <span>Enterprises</span>
+        </span>
       </a>
 
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
@@ -232,7 +30,7 @@
         <a href="#about">About</a>
         <a href="#brands">Our Brands</a>
         <a href="#values">Values</a>
-        <a class="btn btn-primary" href="#contact">Work With Us</a>
+        <a class="btn btn-primary" href="#contact">Contact</a>
       </div>
     </nav>
   </header>
@@ -241,9 +39,13 @@
     <section class="hero" id="top">
       <div class="container hero-content">
         <div class="version-badge">Herrin Enterprises · Version 3</div>
-        <p class="eyebrow">The company behind it all</p>
-        <h1>Building brands.<br>Creating impact.<br><span>Leaving a legacy.</span></h1>
-        <p class="hero-copy">Herrin Enterprises brings together production, documentary storytelling, photography, and community-focused media under one growing family of brands.</p>
+        <p class="eyebrow">A Mississippi Delta company</p>
+        <h1>Building brands.<br>Serving communities.<br><span>Creating memories.</span></h1>
+        <p class="hero-copy">
+          Herrin Enterprises brings together photography, filmmaking, community storytelling,
+          and specialty beverages under one growing family of locally built brands.
+        </p>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="#brands">Explore Our Brands</a>
           <a class="btn btn-secondary" href="#about">Meet the Company</a>
@@ -251,98 +53,240 @@
       </div>
     </section>
 
-    <section>
-      <div class="container intro-grid">
-        <div><p class="eyebrow">One vision</p><h2>Multiple brands. One lasting purpose.</h2></div>
+    <section class="intro">
+      <div class="container intro-grid reveal">
         <div>
-          <p class="big-copy">We turn ideas into meaningful brands, stories, experiences, and creative ventures.</p>
-          <p>From original productions to community storytelling and photography, every Herrin Enterprises brand is built to connect with people and leave something meaningful behind.</p>
+          <p class="eyebrow">One company</p>
+          <h2>Four brands. One shared purpose.</h2>
+        </div>
+
+        <div>
+          <p class="big-copy">
+            We turn creative ideas into real businesses, memorable experiences, and meaningful local projects.
+          </p>
+          <p>
+            Every Herrin Enterprises brand has its own identity, audience, and mission while sharing
+            a commitment to creativity, service, professionalism, and the Mississippi Delta.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat"><strong>3</strong><span>Active Brands</span></div>
-        <div class="stat"><strong>1</strong><span>Original Series</span></div>
-        <div class="stat"><strong>1</strong><span>Shared Vision</span></div>
+    <section class="stats" aria-label="Company overview">
+      <div class="container stats-grid reveal">
+        <div class="stat">
+          <strong>4</strong>
+          <span>Active Brands</span>
+        </div>
+        <div class="stat">
+          <strong>1</strong>
+          <span>Shared Vision</span>
+        </div>
+        <div class="stat">
+          <strong>MS</strong>
+          <span>Delta Based</span>
+        </div>
+        <div class="stat">
+          <strong>∞</strong>
+          <span>Room to Grow</span>
+        </div>
       </div>
     </section>
 
     <section class="brands" id="brands">
       <div class="container">
-        <div class="section-head">
-          <div><p class="eyebrow">Our family of brands</p><h2>Built with purpose.</h2></div>
-          <p>Select any brand below to visit its official website. Each site opens in a new tab.</p>
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Our family of brands</p>
+            <h2>Different industries. Same drive.</h2>
+          </div>
+          <p>
+            Select a brand to visit its official website. Each one opens in a new tab,
+            making it easy to explore the full Herrin Enterprises family.
+          </p>
         </div>
 
-        <div class="brand-grid">
-          <a class="brand-card" href="https://livinginthedelta.github.io/delta-house-productions/" target="_blank" rel="noopener noreferrer" aria-label="Visit Delta House Productions">
-            <div class="brand-top"><div class="brand-icon">Δ</div><span class="status">Active</span></div>
+        <div class="brand-grid reveal">
+          <a class="brand-card delta"
+             href="https://livinginthedelta.github.io/delta-house-productions/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Visit Delta House Productions">
+            <div class="brand-top">
+              <div class="brand-icon">Δ</div>
+              <span class="status">Active</span>
+            </div>
             <div class="brand-content">
               <span class="brand-category">Production Company</span>
               <h3>Delta House Productions</h3>
-              <p>Films, documentaries, web shows, commercials, and original creative media built around stories worth watching.</p>
-              <div class="brand-meta"><span>Film</span><span>Documentary</span><span>Commercials</span></div>
+              <p>
+                Films, documentaries, commercials, web shows, and original creative media
+                built around stories worth watching.
+              </p>
+              <div class="brand-meta">
+                <span>Film</span><span>Documentary</span><span>Commercials</span>
+              </div>
               <span class="btn btn-secondary">Visit Website ↗</span>
             </div>
           </a>
 
-          <a class="brand-card" href="https://livinginthedelta.github.io/living-in-the-delta/#top" target="_blank" rel="noopener noreferrer" aria-label="Visit Living in the Delta">
-            <div class="brand-top"><div class="brand-icon">L</div><span class="status">Active</span></div>
+          <a class="brand-card living"
+             href="https://livinginthedelta.github.io/living-in-the-delta/#top"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Visit Living in the Delta">
+            <div class="brand-top">
+              <div class="brand-icon">L</div>
+              <span class="status">Active</span>
+            </div>
             <div class="brand-content">
-              <span class="brand-category">Original Documentary Series</span>
+              <span class="brand-category">Community Documentary Project</span>
               <h3>Living in the Delta</h3>
-              <p>A documentary-style web series exploring the people, places, businesses, culture, and everyday life of the Mississippi Delta.</p>
-              <div class="brand-meta"><span>Community</span><span>Culture</span><span>Stories</span></div>
-              <span class="btn btn-secondary">Visit Series ↗</span>
+              <p>
+                Sharing the people, places, businesses, history, and culture that make
+                the Mississippi Delta worth discovering.
+              </p>
+              <div class="brand-meta">
+                <span>Community</span><span>History</span><span>Stories</span>
+              </div>
+              <span class="btn btn-secondary">Explore the Project ↗</span>
             </div>
           </a>
 
-          <a class="brand-card" href="https://herrinphotography57.mypixieset.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Herrin Photography">
-            <div class="brand-top"><div class="brand-icon">H</div><span class="status">Active</span></div>
+          <a class="brand-card photography"
+             href="https://www.herrinphotography.org/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Visit Herrin Photography">
+            <div class="brand-top">
+              <div class="brand-icon">H</div>
+              <span class="status">Active</span>
+            </div>
             <div class="brand-content">
               <span class="brand-category">Photography Studio</span>
               <h3>Herrin Photography</h3>
-              <p>Affordable portraits, families, maternity sessions, events, and meaningful photography centered on preserving real memories.</p>
-              <div class="brand-meta"><span>Portraits</span><span>Families</span><span>Events</span></div>
-              <span class="btn btn-secondary">Visit Website ↗</span>
+              <p>
+                Affordable, meaningful photography focused on families, portraits,
+                maternity sessions, events, and genuine moments.
+              </p>
+              <div class="brand-meta">
+                <span>Portraits</span><span>Families</span><span>Events</span>
+              </div>
+              <span class="btn btn-secondary">View Photography ↗</span>
             </div>
           </a>
+
+          <a class="brand-card fizz"
+             href="https://fizznfluff.github.io/FizzNFluff/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Visit Fizz N' Fluff">
+            <div class="bubble bubble-one"></div>
+            <div class="bubble bubble-two"></div>
+            <div class="bubble bubble-three"></div>
+            <div class="brand-top">
+              <div class="brand-icon">F</div>
+              <span class="status">New Brand</span>
+            </div>
+            <div class="brand-content">
+              <span class="brand-category">Specialty Beverage Brand</span>
+              <h3>Fizz N' Fluff</h3>
+              <p>
+                Handcrafted dirty sodas, flavored refreshers, and fun specialty drinks
+                served through pop-ups, community gatherings, and private events.
+              </p>
+              <div class="brand-meta">
+                <span>Dirty Sodas</span><span>Pop-Ups</span><span>Events</span>
+              </div>
+              <span class="btn btn-secondary">Visit Fizz N' Fluff ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="structure">
+      <div class="container reveal">
+        <p class="eyebrow">How we connect</p>
+        <h2>One parent company. Four unique identities.</h2>
+        <div class="company-tree">
+          <div class="tree-parent">
+            <span class="tree-mark">H</span>
+            <div><strong>Herrin Enterprises</strong><small>Parent Company</small></div>
+          </div>
+          <div class="tree-line" aria-hidden="true"></div>
+          <div class="tree-brands">
+            <div><span>📸</span><strong>Herrin Photography</strong></div>
+            <div><span>🎬</span><strong>Delta House Productions</strong></div>
+            <div><span>🌾</span><strong>Living in the Delta</strong></div>
+            <div><span>🥤</span><strong>Fizz N' Fluff</strong></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="values">
       <div class="container">
-        <p class="eyebrow">What guides us</p>
-        <h2>Built on strong values.</h2>
-        <div class="values-grid">
-          <article class="value-card"><span class="value-number">01</span><h3>Creativity</h3><p>Original ideas, thoughtful direction, and bold vision.</p></article>
-          <article class="value-card"><span class="value-number">02</span><h3>Community</h3><p>Highlighting and serving the people and places that make the Delta special.</p></article>
-          <article class="value-card"><span class="value-number">03</span><h3>Integrity</h3><p>Building trust through honesty, dependability, and intentional work.</p></article>
-          <article class="value-card"><span class="value-number">04</span><h3>Legacy</h3><p>Creating brands and stories that remain meaningful for years to come.</p></article>
+        <p class="eyebrow reveal">What guides us</p>
+        <h2 class="reveal">Built on strong values.</h2>
+        <div class="values-grid reveal">
+          <article class="value-card">
+            <span class="value-number">01</span>
+            <h3>Creativity</h3>
+            <p>Original ideas, thoughtful direction, and bold vision across every brand.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-number">02</span>
+            <h3>Community</h3>
+            <p>Serving, highlighting, and investing in the people and places around us.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-number">03</span>
+            <h3>Integrity</h3>
+            <p>Building trust through honesty, dependability, and intentional work.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-number">04</span>
+            <h3>Growth</h3>
+            <p>Turning small beginnings into strong brands with room to expand.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="about" id="about">
-      <div class="container about-grid">
-        <div><p class="eyebrow">About Herrin Enterprises</p><h2>Growing ideas into real brands.</h2></div>
+      <div class="container about-grid reveal">
         <div>
-          <p>Herrin Enterprises is the parent company behind Delta House Productions, Living in the Delta, Herrin Photography, and future creative ventures.</p>
-          <p>Our mission is to develop strong brands, produce meaningful content, and create opportunities through storytelling, creativity, and service.</p>
-          <div class="quote">“Building brands. Creating impact. Leaving a legacy.”</div>
+          <p class="eyebrow">About Herrin Enterprises</p>
+          <h2>Growing ideas into real brands.</h2>
+        </div>
+        <div>
+          <p>
+            Herrin Enterprises is a Mississippi-based parent company founded by Jase Herrin.
+            It brings together creative media, photography, community storytelling, and
+            specialty beverages through a family of independently branded ventures.
+          </p>
+          <p>
+            Our mission is to create meaningful experiences, support local communities,
+            and build businesses that people recognize, trust, and remember.
+          </p>
+          <div class="quote">“Building brands. Serving communities. Creating memories.”</div>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <div class="container">
+      <div class="container reveal">
         <p class="eyebrow">Let’s build something meaningful</p>
-        <h2>Interested in working with one of our brands?</h2>
-        <p>For production inquiries, documentaries, commercials, collaborations, and original media opportunities, contact Delta House Productions.</p>
-        <a class="btn btn-primary" href="mailto:deltahouseproductions@outlook.com">Email Delta House Productions</a>
+        <h2>Connect with Herrin Enterprises.</h2>
+        <p>
+          Reach out about partnerships, business opportunities, community projects,
+          creative collaborations, or questions about one of our brands.
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:hjase3808@gmail.com">Email Herrin Enterprises</a>
+          <a class="btn btn-secondary" href="#brands">Browse Our Brands</a>
+        </div>
       </div>
     </section>
   </main>
@@ -358,32 +302,14 @@
       </div>
 
       <div class="footer-links">
-        <a href="https://livinginthedelta.github.io/delta-house-productions/" target="_blank" rel="noopener noreferrer">Delta House Productions ↗</a>
+        <a href="https://www.herrinphotography.org/" target="_blank" rel="noopener noreferrer">Photography ↗</a>
+        <a href="https://livinginthedelta.github.io/delta-house-productions/" target="_blank" rel="noopener noreferrer">Productions ↗</a>
         <a href="https://livinginthedelta.github.io/living-in-the-delta/#top" target="_blank" rel="noopener noreferrer">Living in the Delta ↗</a>
-        <a href="https://herrinphotography57.mypixieset.com/" target="_blank" rel="noopener noreferrer">Herrin Photography ↗</a>
+        <a href="https://fizznfluff.github.io/FizzNFluff/" target="_blank" rel="noopener noreferrer">Fizz N' Fluff ↗</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    const menuBtn=document.getElementById("menuBtn");
-    const navLinks=document.getElementById("navLinks");
-
-    menuBtn.addEventListener("click",()=>{
-      const open=navLinks.classList.toggle("open");
-      menuBtn.textContent=open?"✕":"☰";
-      menuBtn.setAttribute("aria-expanded",open?"true":"false");
-    });
-
-    navLinks.querySelectorAll("a").forEach(link=>{
-      link.addEventListener("click",()=>{
-        navLinks.classList.remove("open");
-        menuBtn.textContent="☰";
-        menuBtn.setAttribute("aria-expanded","false");
-      });
-    });
-
-    document.getElementById("year").textContent=new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
